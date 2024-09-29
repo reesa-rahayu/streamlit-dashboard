@@ -158,9 +158,9 @@ with tab2:
     st.subheader('Best Customer (RFM Analysis)')
 
     # Recency Plot
-    fig1, ax1 = plt.subplots(figsize=(24, 10))
+    fig1, ax1 = plt.subplots(figsize=(10, 5))
     colors = [fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color]
-    sns.barplot(y="recency_minute", x="customer_id", hue="customer_id", legend=False, data=rfm_df.sort_values(by="recency_minute", ascending=True).head(5), palette=colors, ax=ax1)
+    sns.barplot(x="recency_minute", y="customer_id", hue="recency_minute", legend=False, data=rfm_df.sort_values(by="recency_minute", ascending=True).head(5), palette=colors, ax=ax1)
     ax1.set_ylabel(None)
     ax1.set_xlabel(None)
     ax1.set_title("By Recency (minutes)", loc="center", fontsize=18)
@@ -168,9 +168,9 @@ with tab2:
     st.pyplot(fig1)
 
     # Frecuency Plot
-    fig2, ax2 = plt.subplots(figsize=(24, 10))
+    fig2, ax2 = plt.subplots(figsize=(10, 5))
     colors = [fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color]
-    sns.barplot(y="frequency", x="customer_id", hue="customer_id", legend=False, data=rfm_df.sort_values(by="frequency", ascending=False).head(5), palette=colors, ax=ax2)
+    sns.barplot(x="frequency", y="customer_id", hue="frequency", legend=False, data=rfm_df.sort_values(by="frequency", ascending=False).head(5), palette=colors, ax=ax2)
     ax2.set_ylabel(None)
     ax2.set_xlabel(None)
     ax2.set_title("By Frequency", loc="center", fontsize=18)
@@ -178,9 +178,9 @@ with tab2:
     st.pyplot(fig2)
 
     # Monetary Plot
-    fig3, ax3 = plt.subplots(figsize=(24, 10))
+    fig3, ax3 = plt.subplots(figsize=(10, 5))
     colors = [fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color, fuchsia_color]
-    sns.barplot(y="monetary", x="customer_id", hue="customer_id", legend=False, data=rfm_df.sort_values(by="monetary", ascending=False).head(5), palette=colors, ax=ax3)
+    sns.barplot(x="monetary", y="customer_id", hue="monetary", legend=False, data=rfm_df.sort_values(by="monetary", ascending=False).head(5), palette=colors, ax=ax3)
     ax3.set_ylabel(None)
     ax3.set_xlabel(None)
     ax3.set_title("By Monetary", loc="center", fontsize=18)
